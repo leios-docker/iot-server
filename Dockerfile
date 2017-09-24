@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 # Install Nginx
 RUN \
     apt-get update && \
-    apt-get install -y apache2 mysql-client php libapache2-mod-php php-mysql php-curl php-pear php-dev php-mcrypt php-json build-essential && \
+    apt-get install -y apache2 mysql-client php libapache2-mod-php php-mysql php-curl php-pear php-dev php-mcrypt php-json vim && \
     rm -rf /var/lib/apt/lists/*
 
 RUN \
@@ -25,3 +25,11 @@ VOLUME ["/etc/apache2/", "/var/www", "/var/log/apache2"]
 
 # Define working directory.
 WORKDIR /etc/apache2
+
+COPY files/init.sh /init.sh
+
+# Define default command.
+CMD ["/init.sh"]
+
+# Expose ports.
+EXPOSE 80
