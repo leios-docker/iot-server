@@ -4,5 +4,5 @@ then
   cp -Ra /etc/apache2.default/* /etc/apache2/
 fi
 
-source /etc/apache2/envvars
+. /etc/apache2/envvars
 /usr/sbin/apache2 -DFOREGROUND
