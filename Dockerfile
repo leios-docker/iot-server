@@ -24,7 +24,7 @@ RUN \
 RUN cp -R /etc/apache2 /etc/apache2.default
 
 # Define mountable directories.
-VOLUME ["/etc/apache2/", "/var/www", "/var/log/apache2"]
+VOLUME ["/etc/apache2/", "/var/www", "/var/log/apache2", "/var/lib/phpfiwa", "/var/lib/phpfina", "/var/lib/phptimeseries"]
 
 # Define working directory.
 WORKDIR /etc/apache2
