@@ -4,7 +4,10 @@ FROM ubuntu:16.04
 # Install Nginx
 RUN \
     apt-get update && \
-    apt-get install -y apache2 mysql-client php libapache2-mod-php php-mysql php-curl php-pear php-dev php-mcrypt php-json vim && \
+    apt-get install -y software-properties-common && \
+    add-apt-repository ppa:certbot/certbot && \
+    apt-get update && \
+    apt-get install -y apache2 mysql-client php libapache2-mod-php php-mysql php-curl php-pear php-dev php-mcrypt php-json vim python-certbot-apache && \
     rm -rf /var/lib/apt/lists/*
 
 RUN \
